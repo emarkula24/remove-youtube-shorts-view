@@ -1,3 +1,14 @@
+// ==UserScript==
+// @name         YouTube Shorts Redirector
+// @namespace    http://tampermonkey.net/
+// @version      2025-07-03
+// @description  Automatically redirect to a regular video player from Youtube Shorts.
+// @author       geksu
+// @match        *://www.youtube.com/*
+// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant        none
+// ==/UserScript==
+
 (function () {
     let lastUrl = location.href;
 
@@ -15,4 +26,5 @@
             window.location.replace(newUrl);
         }
     }
+     onUrlChange(location.href);
 })();
